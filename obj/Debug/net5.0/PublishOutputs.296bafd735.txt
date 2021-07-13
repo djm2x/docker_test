@@ -1,0 +1,11 @@
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/asp_api
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/appsettings.Development.json
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/appsettings.json
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/asp_api.dll
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/asp_api.deps.json
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/asp_api.runtimeconfig.json
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/asp_api.pdb
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/Microsoft.OpenApi.dll
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/Swashbuckle.AspNetCore.Swagger.dll
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/osboxes/Public/asp_api/bin/Debug/net5.0/publish/Swashbuckle.AspNetCore.SwaggerUI.dll
