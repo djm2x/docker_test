@@ -193,7 +193,7 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {}
+    "/home/osboxes/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -201,11 +201,11 @@
       "projectUniqueName": "/home/osboxes/Public/asp_api/asp_api.csproj",
       "projectName": "asp_api",
       "projectPath": "/home/osboxes/Public/asp_api/asp_api.csproj",
-      "packagesPath": "/root/.nuget/packages/",
+      "packagesPath": "/home/osboxes/.nuget/packages/",
       "outputPath": "/home/osboxes/Public/asp_api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "/home/osboxes/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
