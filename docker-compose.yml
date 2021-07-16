@@ -14,26 +14,26 @@ services:
       - db
 
   db:
-    image: "mcr.microsoft.com/mssql/server"
+    image: "mcr.microsoft.com/mssql/server:2017-latest"
     healthcheck:
-      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-S", "http://localhost:1433", "-U", "sa", "-P", "Pass_word", "-Q", "SELECT 1", "||", "exit 1"]
-    container_name: nopcommerceDB
+      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-S", "http://localhost:1433", "-U", "sa", "-P", "ourStrong@Passw0rd", "-Q", "SELECT 1", "||", "exit 1"]
+    container_name: sql_server_container
     build:
       context: .
-      dockerfile: Mssql.Dockerfile
+      # dockerfile: Mssql.Dockerfile
     environment:
-      SA_PASSWORD: "123"
+      SA_PASSWORD: "ourStrong@Passw0rd"
       ACCEPT_EULA: "Y"
+      SSQL_PID: "Express"
     ports:
       - 1433:1433
     expose:
       - 1433
 
     volumes:
-      - ./Db:/var/opt/mssql/data
+      - ./sql_server_data:/var/opt/mssql/data
 
-volumes:
-  nopcommerce_data:
+
 
 
 
