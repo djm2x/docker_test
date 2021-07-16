@@ -1,7 +1,8 @@
 FROM mcr.microsoft.com/mssql/server AS base
 
 ENV ACCEPT_EULA=Y
-ENV SA_PASSWORD=Password123
+ENV SA_PASSWORD=YourStrong@Passw0rd'
+ENV MSSQL_PID=Developer
 
 COPY . .
 COPY ["Db/Scripts/*", "Db/Scripts/"]

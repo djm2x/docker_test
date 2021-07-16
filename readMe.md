@@ -15,7 +15,9 @@ docker run -ti test2 bash
 docker-compose up --build
 docker pull mcr.microsoft.com/mssql/server
 
-docker run -d --name sql_server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123' -p 1433:1433 mcr.microsoft.com/mssql/server -v sqldata1:/var/opt/mssql
+docker run -d --name sql_server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrong@Passw0rd' -p 1433:1433 -v sql-vol2:/var/opt/mssql/data mcr.microsoft.com/mssql/server:2017-latest
+
+sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=123" -p 1433:1433 --name sql1 -h sql1 -d mcr.microsoft.com/mssql/server
 
 ##inside container sqlserver 
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '<YourPassword>'
@@ -23,3 +25,22 @@ docker run -d --name sql_server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123' -p 1433:
 docker exec -it <Container ID or name> /opt/mssql-tools/bin/sqlcmd \
 -S localhost -U SA -P '<YourStrong!Passw0rd>' \
 -Q 'SELECT @@VERSION'
+
+## How to Stop All Docker Containers
+```
+docker kill $(docker ps -q)
+```
+
+## How to Remove All Docker Containers
+```
+docker rm $(docker ps -a -q)
+```
+
+## sees the docker volumes
+```
+docker volume ls
+```
+
+```
+docker inspect volume sql-vol2
+```
