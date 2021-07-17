@@ -4,25 +4,29 @@ version: '3.4'
 
 services:
   aspapi:
-    image: aspapi
+    # image: aspapi
     build:
       context: .
       dockerfile: ./Dockerfile
+    environment: 
+      ASPNETCORE_URLS: "http://+:5000"
     ports:
-      - 8081:80
+      - 8081:5000
+    # expose: 
+    #   - 8081
     depends_on:
-      - db
+      - sql_server
 
-  db:
+  sql_server:
     image: "mcr.microsoft.com/mssql/server:2017-latest"
     healthcheck:
       test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-S", "http://localhost:1433", "-U", "sa", "-P", "ourStrong@Passw0rd", "-Q", "SELECT 1", "||", "exit 1"]
-    container_name: sql_server_container
+    # container_name: sql_server_container
     build:
       context: .
       # dockerfile: Mssql.Dockerfile
     environment:
-      SA_PASSWORD: "ourStrong@Passw0rd"
+      SA_PASSWORD: "YourStrong@Passw0rd"
       ACCEPT_EULA: "Y"
       SSQL_PID: "Express"
     ports:

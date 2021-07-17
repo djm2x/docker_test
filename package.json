@@ -1,0 +1,22 @@
+{
+  "name": "docker_test",
+  "version": "1.0.0",
+  "description": "docker build . -t asp_api docker build --network=host -f ./Dockerfile . -t test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dc": "docker-compose up --build",
+    "df": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djm2x/docker_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djm2x/docker_test/issues"
+  },
+  "homepage": "https://github.com/djm2x/docker_test#readme"
+}

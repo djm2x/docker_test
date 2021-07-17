@@ -7,7 +7,7 @@ docker run test -p 5000:5000 -p 5001:5001 -e ASPNETCORE_URLS="http://+:5000;http
 
 docker build --network=host -t test2 .
 docker run -it --rm -p 80:8081 --name aspnetcore_sample test
-
+code . --user-data-dir
 
 docker run -ti test2 bash
 

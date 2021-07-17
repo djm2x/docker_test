@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -10,7 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Models;
 
 namespace asp_api
 {
@@ -26,12 +29,12 @@ namespace asp_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<MyContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("sql_server_docker"));
+            });
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "asp_api", Version = "v1" });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,11 +43,22 @@ namespace asp_api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "asp_api v1"));
             }
 
-            app.UseHttpsRedirection();
+            app.Use(async (context, next) =>
+                {
+                    await next();
+
+                    if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
+                    {
+                        context.Request.Path = "/index.html";
+                        await next();
+                    }
+                });
+
+            // app.UseHttpsRedirection();
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 
