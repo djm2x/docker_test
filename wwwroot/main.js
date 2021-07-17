@@ -1,11 +1,24 @@
 
 
-async function main() {
+async function test() {
     const response = await fetch('./api/home/get')
   
     if (response.status === 200) {
-    console.log(response.json())
+        const r = await response.json();
+
+        document.querySelector('#data').innerHTML = JSON.stringify(r);
     }
 }
 
-main();
+async function users() {
+    const response = await fetch('./api/home/users')
+  
+    if (response.status === 200) {
+        const r = await response.json();
+
+        document.querySelector('#users').innerHTML = JSON.stringify(r);
+    }
+}
+
+test();
+users();

@@ -35,7 +35,7 @@ services:
       - 1433
 
     volumes:
-      - ./sql_server_data:/var/opt/mssql/data
+      - ./sql_server_vol_data:/var/opt/mssql/data
 
 
 

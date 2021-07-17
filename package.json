@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dc": "docker-compose up --build",
-    "df": ""
+    "b": "dotnet watch run",
+    "db": "sudo docker run -d --name sql_server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrong@Passw0rd' -p 1433:1433 -v sql_server_vol_data:/var/opt/mssql/data mcr.microsoft.com/mssql/server:2017-latest",
+    "df": "",
+    "m": "sudo dotnet ef migrations add first && dotnet ef database update"
   },
   "repository": {
     "type": "git",

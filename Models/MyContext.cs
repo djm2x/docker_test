@@ -6,7 +6,7 @@ namespace Models
     {
         public MyContext(DbContextOptions<MyContext> options) : base(options) { }
 
-        public virtual DbSet<User> Affectations { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -18,7 +18,10 @@ namespace Models
                 entity.Property(e => e.Password);
             });
 
+            modelBuilder
+                    .Users();
         }
+
 
 
         // partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
