@@ -12,3 +12,4 @@
 # **/dev.db
 
 *.rar
+**/sql_server_data

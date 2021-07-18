@@ -1,15 +1,16 @@
 {
-  "name": "docker_test",
   "version": "1.0.0",
   "description": "docker build . -t asp_api docker build --network=host -f ./Dockerfile . -t test",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dc": "docker-compose up --build",
+    "dc": "sudo docker-compose up --build -d",
+    "sql": "sudo docker-compose -f docker-compose.mssql.yml up --build -d",
     "b": "dotnet watch run",
     "db": "sudo docker run -d --name sql_server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrong@Passw0rd' -p 1433:1433 -v sql_server_vol_data:/var/opt/mssql/data mcr.microsoft.com/mssql/server:2017-latest",
-    "df": "",
-    "m": "sudo dotnet ef migrations add first && dotnet ef database update"
+    "m": "sudo dotnet ef migrations add first && dotnet ef database update",
+    "sql0": "sudo docker run -d --name sql_server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrong@Passw0rd' --restart=always -p 1433:1433 -v sql_server_data:/var/opt/mssql/data mcr.microsoft.com/mssql/server:2017-latest",
+    "df": ""
   },
   "repository": {
     "type": "git",

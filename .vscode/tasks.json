@@ -45,7 +45,7 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "aspapi:dev",
+                "tag": "dockertest:dev",
                 "target": "base",
                 "dockerfile": "${workspaceFolder}/Dockerfile",
                 "context": "${workspaceFolder}",
@@ -62,7 +62,7 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "aspapi:latest",
+                "tag": "dockertest:latest",
                 "dockerfile": "${workspaceFolder}/Dockerfile",
                 "context": "${workspaceFolder}",
                 "pull": true
