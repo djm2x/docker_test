@@ -8,8 +8,6 @@
 **/bin
 **/obj
 **/docs
-
-# **/dev.db
-
+obj/
 *.rar
 **/sql_server_data
