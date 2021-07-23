@@ -45,55 +45,55 @@ namespace asp_api.Migrations
                         new
                         {
                             Id = 2,
-                            Email = "Robert.Martin@hotmail.fr",
+                            Email = "Brieuc_Moreau73@gmail.com",
                             Password = "123"
                         },
                         new
                         {
                             Id = 3,
-                            Email = "Aquilin.Laurent@gmail.com",
+                            Email = "Marion_Faure@hotmail.fr",
                             Password = "123"
                         },
                         new
                         {
                             Id = 4,
-                            Email = "Gontran5@yahoo.fr",
+                            Email = "Firmin.Bertrand@yahoo.fr",
                             Password = "123"
                         },
                         new
                         {
                             Id = 5,
-                            Email = "Agneflete66@hotmail.fr",
+                            Email = "Aurelle.Brunet5@hotmail.fr",
                             Password = "123"
                         },
                         new
                         {
                             Id = 6,
-                            Email = "Jeanne_Barre44@hotmail.fr",
+                            Email = "Victoire_Carpentier54@gmail.com",
                             Password = "123"
                         },
                         new
                         {
                             Id = 7,
-                            Email = "Aurore_Simon14@hotmail.fr",
+                            Email = "Nathan46@gmail.com",
                             Password = "123"
                         },
                         new
                         {
                             Id = 8,
-                            Email = "Christian67@gmail.com",
+                            Email = "Herve1@hotmail.fr",
                             Password = "123"
                         },
                         new
                         {
                             Id = 9,
-                            Email = "Athanasie.Colin21@yahoo.fr",
+                            Email = "Anstrudie.Breton@hotmail.fr",
                             Password = "123"
                         },
                         new
                         {
                             Id = 10,
-                            Email = "Pascal26@hotmail.fr",
+                            Email = "Fantin_Pierre51@gmail.com",
                             Password = "123"
                         });
                 });

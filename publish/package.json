@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dc": "sudo docker-compose up --build -d",
+    "dc": "sudo docker-compose up --build -d --remove-orphans",
     "sql": "sudo docker-compose -f docker-compose.mssql.yml up --build -d",
     "b": "dotnet watch run",
     "db": "sudo docker run -d --name sql_server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrong@Passw0rd' -p 1433:1433 -v sql_server_vol_data:/var/opt/mssql/data mcr.microsoft.com/mssql/server:2017-latest",

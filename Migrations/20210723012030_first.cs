@@ -26,15 +26,15 @@ namespace asp_api.Migrations
                 values: new object[,]
                 {
                     { 1, "sa@angular.io", "123" },
-                    { 2, "Robert.Martin@hotmail.fr", "123" },
-                    { 3, "Aquilin.Laurent@gmail.com", "123" },
-                    { 4, "Gontran5@yahoo.fr", "123" },
-                    { 5, "Agneflete66@hotmail.fr", "123" },
-                    { 6, "Jeanne_Barre44@hotmail.fr", "123" },
-                    { 7, "Aurore_Simon14@hotmail.fr", "123" },
-                    { 8, "Christian67@gmail.com", "123" },
-                    { 9, "Athanasie.Colin21@yahoo.fr", "123" },
-                    { 10, "Pascal26@hotmail.fr", "123" }
+                    { 2, "Brieuc_Moreau73@gmail.com", "123" },
+                    { 3, "Marion_Faure@hotmail.fr", "123" },
+                    { 4, "Firmin.Bertrand@yahoo.fr", "123" },
+                    { 5, "Aurelle.Brunet5@hotmail.fr", "123" },
+                    { 6, "Victoire_Carpentier54@gmail.com", "123" },
+                    { 7, "Nathan46@gmail.com", "123" },
+                    { 8, "Herve1@hotmail.fr", "123" },
+                    { 9, "Anstrudie.Breton@hotmail.fr", "123" },
+                    { 10, "Fantin_Pierre51@gmail.com", "123" }
                 });
         }
 
