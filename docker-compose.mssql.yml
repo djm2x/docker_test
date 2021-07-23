@@ -18,8 +18,8 @@ services:
     - sql_server_data:/var/opt/mssql/data
     restart: always
 
-# volumes:
-#   sql_server_data:
+volumes:
+  sql_server_data:
   
 
 

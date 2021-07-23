@@ -34,6 +34,11 @@ namespace asp_api
                 options.UseSqlServer(Configuration.GetConnectionString("sql_server_docker"));
             });
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "asp_api", Version = "v1" });
+            });
+
             services.AddControllers();
         }
 
@@ -45,18 +50,30 @@ namespace asp_api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint($"/swagger/v1/swagger.json", "asp_api v1");
+                c.RoutePrefix = "docs";
+                // c.RoutePrefix = string.Empty;
+            });
+
+
             app.Use(async (context, next) =>
                 {
                     await next();
 
-                    if (context.Response.StatusCode == 404 && !Path.HasExtension(context.Request.Path.Value))
+                    Console.WriteLine("context.Request.Path >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                    Console.WriteLine(context.Request.Path);
+
+                    if (context.Response.StatusCode == 404 && context.Request.Path.ToString().ToLower() != "docs" && !Path.HasExtension(context.Request.Path.Value))
                     {
                         context.Request.Path = "/index.html";
                         await next();
                     }
                 });
 
-            // app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseStaticFiles();
 
